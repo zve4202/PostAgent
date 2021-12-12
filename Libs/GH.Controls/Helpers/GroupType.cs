@@ -1,4 +1,4 @@
-﻿namespace GH.Controls
+﻿namespace GH.Forms
 { 
     public enum GroupType
     {

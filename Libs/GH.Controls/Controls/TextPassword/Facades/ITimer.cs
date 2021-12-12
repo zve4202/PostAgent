@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Timers;
 
-namespace GH.Controls.Facades
+namespace GH.Forms.Facades
 {
     public interface ITimer : IDisposable
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GH.Controls.Facades
+namespace GH.Forms.Facades
 {
     public interface ISolidBrush : IDisposable
     {

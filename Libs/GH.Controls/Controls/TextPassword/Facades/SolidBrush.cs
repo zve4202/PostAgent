@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace GH.Controls.Facades
+namespace GH.Forms.Facades
 {
     public sealed class SolidBrush : ISolidBrush, IDisposable
     {

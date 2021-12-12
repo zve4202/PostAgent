@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 
-namespace GH.Controls.Facades
+namespace GH.Forms.Facades
 {
     public class Graphics : IGraphics, IDisposable
     {

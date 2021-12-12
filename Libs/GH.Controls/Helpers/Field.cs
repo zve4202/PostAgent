@@ -1,11 +1,11 @@
-﻿using GH.Controls.Annotations;
+﻿using GH.Forms.Annotations;
 using GH.Entity;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace GH.Controls
+namespace GH.Forms
 {
     public struct Field
     {

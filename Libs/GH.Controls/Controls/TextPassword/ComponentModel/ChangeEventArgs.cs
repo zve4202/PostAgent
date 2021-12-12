@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GH.Controls.ComponentModel
+namespace GH.Forms.ComponentModel
 {
     public class ChangeEventArgs<T> : EventArgs, IEquatable<ChangeEventArgs<T>>
     {

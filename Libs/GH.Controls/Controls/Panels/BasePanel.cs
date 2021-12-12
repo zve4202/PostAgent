@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace GH.Controls
+namespace GH.Forms
 {
     [ToolboxItem(true)]
     [ToolboxItemFilter("GH Controls")]

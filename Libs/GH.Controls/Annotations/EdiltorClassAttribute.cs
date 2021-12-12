@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace GH.Controls.Annotations
+namespace GH.Forms.Annotations
 {
     public class EdiltorClassAttribute : Attribute
     {

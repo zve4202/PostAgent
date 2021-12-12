@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GH.Entity", "Libs\GH.Entity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GH.Utils", "Libs\GH.Utils\GH.Utils.csproj", "{84646A6F-54E1-415A-B424-980883FAB86D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GH.Controls", "Libs\GH.Controls\GH.Controls.csproj", "{3C45CCBD-45FE-4EEA-91BA-B0B61BB5B481}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GH.Forms", "Libs\GH.Controls\GH.Forms.csproj", "{3C45CCBD-45FE-4EEA-91BA-B0B61BB5B481}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GH.Resourses", "Libs\GH.Resourses\GH.Resourses.csproj", "{F9925C54-4F85-4566-A4A0-B31A09A8B0A2}"
 EndProject

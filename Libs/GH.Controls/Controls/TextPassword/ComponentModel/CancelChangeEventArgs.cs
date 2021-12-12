@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace GH.Controls.ComponentModel
+namespace GH.Forms.ComponentModel
 {
     public class CancelChangeEventArgs<T> : CancelEventArgs
     {
-        protected readonly GH.Controls.ComponentModel.ChangeEventArgs<T> ChangeEventArgs;
+        protected readonly GH.Forms.ComponentModel.ChangeEventArgs<T> ChangeEventArgs;
 
         public static bool operator ==(CancelChangeEventArgs<T> left, CancelChangeEventArgs<T> right)
         {
@@ -37,13 +37,13 @@ namespace GH.Controls.ComponentModel
 
         public CancelChangeEventArgs(T oldValue, T newValue)
         {
-            this.ChangeEventArgs = new GH.Controls.ComponentModel.ChangeEventArgs<T>(oldValue, newValue);
+            this.ChangeEventArgs = new GH.Forms.ComponentModel.ChangeEventArgs<T>(oldValue, newValue);
         }
 
         public CancelChangeEventArgs(T oldValue, T newValue, bool cancel)
           : base(cancel)
         {
-            this.ChangeEventArgs = new GH.Controls.ComponentModel.ChangeEventArgs<T>(oldValue, newValue);
+            this.ChangeEventArgs = new GH.Forms.ComponentModel.ChangeEventArgs<T>(oldValue, newValue);
         }
 
         public T NewValue

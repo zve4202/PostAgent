@@ -1,5 +1,5 @@
-﻿using GH.Controls.ComponentModel;
-using GH.Controls.Facades;
+﻿using GH.Forms.ComponentModel;
+using GH.Forms.Facades;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -7,7 +7,7 @@ using System.Drawing.Text;
 using System.Timers;
 using System.Windows.Forms;
 
-namespace GH.Controls
+namespace GH.Forms
 {
     [DefaultProperty("PasswordCharDelay")]
     [Description("Позволяет пользователю вводить пароль, мгновенно отображая каждый введенный символ.")]

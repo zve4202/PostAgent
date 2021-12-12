@@ -62,9 +62,9 @@
       <Project>{599f6695-aa1d-4657-b57c-5852c8f7be04}</Project>
       <Name>GH.Cfg</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Libs\GH.Controls\GH.Controls.csproj">
+    <ProjectReference Include="..\..\Libs\GH.Controls\GH.Forms.csproj">
       <Project>{3c45ccbd-45fe-4eea-91ba-b0b61bb5b481}</Project>
-      <Name>GH.Controls</Name>
+      <Name>GH.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Libs\GH.Entity\GH.Entity.csproj">
       <Project>{583743dd-dbf7-425b-b8db-bc0f9b3df67b}</Project>

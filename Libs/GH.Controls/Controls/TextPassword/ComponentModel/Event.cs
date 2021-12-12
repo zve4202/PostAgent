@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GH.Controls.ComponentModel
+namespace GH.Forms.ComponentModel
 {
     public static class Event
     {

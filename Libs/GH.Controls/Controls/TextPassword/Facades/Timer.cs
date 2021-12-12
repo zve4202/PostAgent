@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Timers;
 
-namespace GH.Controls.Facades
+namespace GH.Forms.Facades
 {
     public class Timer : ITimer, IDisposable
     {

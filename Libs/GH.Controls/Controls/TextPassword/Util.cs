@@ -1,13 +1,13 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: GH.Controls.Util
-// Assembly: GH.Controls, Version=0.4.0.33109, Culture=neutral, PublicKeyToken=null
+// Type: GH.Forms.Util
+// Assembly: GH.Forms, Version=0.4.0.33109, Culture=neutral, PublicKeyToken=null
 // MVID: F2073A0E-CD4C-4D3D-A27E-14F95DDCAF7B
-// Assembly location: E:\C#\PostAgent\bin\Debug\GH.Controls.dll
+// Assembly location: E:\C#\PostAgent\bin\Debug\GH.Forms.dll
 
 using System;
 using System.Diagnostics;
 
-namespace GH.Controls
+namespace GH.Forms
 {
   public static class Util
   {

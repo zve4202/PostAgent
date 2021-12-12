@@ -1,4 +1,4 @@
-﻿namespace GH.Controls.Annotations
+﻿namespace GH.Forms.Annotations
 {
     public enum EditorType
     {

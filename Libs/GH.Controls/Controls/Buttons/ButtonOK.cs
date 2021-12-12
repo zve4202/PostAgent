@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
 
-namespace GH.Controls
+namespace GH.Forms
 {
     [ToolboxItem(true)]
     [ToolboxItemFilter("GH Controls")]

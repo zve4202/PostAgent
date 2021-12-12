@@ -175,9 +175,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="core\PostAgent.domain\PostAgent.domain.csproj">
-      <Project>{ddd80802-37dd-40fc-b9bc-c9d4d88aaeb8}</Project>
-      <Name>PostAgent.domain</Name>
+    <ProjectReference Include="Core\PostAgent.Domain\PostAgent.Domain.csproj">
+      <Project>{B94E5885-DF26-4997-830F-FDD399E84733}</Project>
+      <Name>PostAgent.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="Libs\GH.Cfg\GH.Cfg.csproj">
       <Project>{599F6695-AA1D-4657-B57C-5852C8F7BE04}</Project>
@@ -187,9 +187,9 @@
       <Project>{A57B184C-89CC-47CF-9696-5D437F877710}</Project>
       <Name>GH.Context</Name>
     </ProjectReference>
-    <ProjectReference Include="Libs\GH.Controls\GH.Controls.csproj">
+    <ProjectReference Include="Libs\GH.Controls\GH.Forms.csproj">
       <Project>{3c45ccbd-45fe-4eea-91ba-b0b61bb5b481}</Project>
-      <Name>GH.Controls</Name>
+      <Name>GH.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="Libs\GH.Entity\GH.Entity.csproj">
       <Project>{583743DD-DBF7-425B-B8DB-BC0F9B3DF67B}</Project>

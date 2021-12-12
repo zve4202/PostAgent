@@ -1,4 +1,4 @@
-﻿using GH.Controls.Annotations;
+﻿using GH.Forms.Annotations;
 using GH.Entity;
 using GH.Utils;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace GH.Controls
+namespace GH.Forms
 {
 
     public static class ControlsHelper

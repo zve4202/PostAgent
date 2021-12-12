@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Drawing.Text;
 
-namespace GH.Controls.Facades
+namespace GH.Forms.Facades
 {
     public interface IGraphics : IDisposable
     {

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using GH.Entity;
 
-namespace GH.Controls
+namespace GH.Forms
 {
     public static class LayoutHelper
     {
