@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C45CCBD-45FE-4EEA-91BA-B0B61BB5B481}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GH.Controls</RootNamespace>
+    <AssemblyName>GH.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\EdiltorClassAttribute.cs" />
+    <Compile Include="Annotations\EditorType.cs" />
+    <Compile Include="Controls\Buttons\BaseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Buttons\ButtonCancel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Buttons\ButtonOK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Panels\BasePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Panels\FieldsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Panels\OkCancelPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Panels\StartStopPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextPassword\ComponentModel\CancelChangeEventArgs.cs" />
+    <Compile Include="Controls\TextPassword\ComponentModel\ChangeEventArgs.cs" />
+    <Compile Include="Controls\TextPassword\ComponentModel\Event.cs" />
+    <Compile Include="Controls\TextPassword\Facades\Graphics.cs" />
+    <Compile Include="Controls\TextPassword\Facades\IGraphics.cs" />
+    <Compile Include="Controls\TextPassword\Facades\ISolidBrush.cs" />
+    <Compile Include="Controls\TextPassword\Facades\ITimer.cs" />
+    <Compile Include="Controls\TextPassword\Facades\SolidBrush.cs" />
+    <Compile Include="Controls\TextPassword\Facades\Timer.cs" />
+    <Compile Include="Controls\TextPassword\TextPassword.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextPassword\Util.cs" />
+    <Compile Include="Controls\TextPath\TextPath.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\AbstrctControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helpers\ControlsHelper.cs" />
+    <Compile Include="Helpers\Field.cs" />
+    <Compile Include="Helpers\GroupType.cs" />
+    <Compile Include="Helpers\LayoutHelper.cs" />
+    <Compile Include="Helpers\ObjectHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\TextPassword\toolbox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GH.Context\GH.Context.csproj">
+      <Project>{a57b184c-89cc-47cf-9696-5d437f877710}</Project>
+      <Name>GH.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GH.Entity\GH.Entity.csproj">
+      <Project>{583743dd-dbf7-425b-b8db-bc0f9b3df67b}</Project>
+      <Name>GH.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GH.Utils\GH.Utils.csproj">
+      <Project>{84646a6f-54e1-415a-b424-980883fab86d}</Project>
+      <Name>GH.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\UserControls\AbstrctControl.resx">
+      <DependentUpon>AbstrctControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
