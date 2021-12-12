@@ -9,10 +9,6 @@ namespace PostAgent.Domain.Cfgs
 {
     public class CfgPost : SectionCfg
     {
-        public CfgPost(AppCfg app) : base(app)
-        {
-        }
-
         [Display(Name = "Host", Description = "SMTP сервер. Обычно smtp.site.ru (.com) ", GroupName = "Server"), Required(ErrorMessage = "Поле не должно быть пустым")]
         [EdiltorClass(ControlType = EditorType.WebAddress)]
         public string Host { get; set; } = "smtp.yandex.ru";

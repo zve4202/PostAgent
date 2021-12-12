@@ -38,16 +38,9 @@
       <HintPath>..\..\PostAgent\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configs\CfgApp.cs" />
+    <Compile Include="Configs\AppCfg.cs" />
     <Compile Include="Configs\FormCfg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Configs\SectionCfg.cs" />

@@ -9,38 +9,38 @@ using System.Diagnostics;
 
 namespace GH.Forms
 {
-  public static class Util
-  {
-    [Conditional("DEBUG")]
-    public static void DebugStackTrace()
+    public static class Util
     {
-      string str1 = new StackTrace().ToString();
-      string[] separator = new string[1]
-      {
+        [Conditional("DEBUG")]
+        public static void DebugStackTrace()
+        {
+            string str1 = new StackTrace().ToString();
+            string[] separator = new string[1]
+            {
         Environment.NewLine
-      };
-      foreach (string str2 in str1.Split(separator, StringSplitOptions.RemoveEmptyEntries))
-        ;
-    }
+            };
+            foreach (string str2 in str1.Split(separator, StringSplitOptions.RemoveEmptyEntries))
+                ;
+        }
 
-    public static void DebugWithIndentation(Action action)
-    {
-      Util.DebugWithIndentation<bool>((Func<bool>) (() =>
-      {
-        action();
-        return false;
-      }));
-    }
+        public static void DebugWithIndentation(Action action)
+        {
+            Util.DebugWithIndentation<bool>((Func<bool>)(() =>
+           {
+               action();
+               return false;
+           }));
+        }
 
-    public static T DebugWithIndentation<T>(Func<T> action)
-    {
-      try
-      {
-        return action();
-      }
-      finally
-      {
-      }
+        public static T DebugWithIndentation<T>(Func<T> action)
+        {
+            try
+            {
+                return action();
+            }
+            finally
+            {
+            }
+        }
     }
-  }
 }

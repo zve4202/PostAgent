@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.ComponentModel;
 
 namespace GH.Forms
 {
@@ -55,7 +55,7 @@ namespace GH.Forms
         }
 
         protected BindingSource dataSource = null;
-        
+
         public BasePanel(string name, Control parent)
         {
 

@@ -48,12 +48,10 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App\AppStorage.cs" />
     <Compile Include="App\EnumBaseId.cs" />
     <Compile Include="App\EnumInfoType.cs" />
     <Compile Include="Cfgs\CfgFirebird.cs" />
     <Compile Include="Cfgs\CfgPost.cs" />
-    <Compile Include="Entities\AbstractEntity.cs" />
     <Compile Include="Entities\Letter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,7 +6,6 @@ using Serilog.Events;
 using System;
 using System.Diagnostics;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace PostAgent
 {
@@ -32,14 +31,14 @@ namespace PostAgent
             Log.Logger = new LoggerConfiguration()
                 .Enrich.With(new ThreadIdEnricher())
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-                .WriteTo.File(name, 
-                    rollingInterval: RollingInterval.Day, 
+                .WriteTo.File(name,
+                    rollingInterval: RollingInterval.Day,
                     outputTemplate: "{Timestamp:HH:mm} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
                 .CreateLogger();
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             RunContext.Run<MasterForm>();
-        }        
+        }
     }
 }

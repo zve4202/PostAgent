@@ -1,5 +1,4 @@
-﻿using GH.Entity;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -27,7 +26,9 @@ namespace GH.Cfg
         }
         public void AddConfig<T>() where T : SectionCfg
         {
-            var cfg = Activator.CreateInstance<T>();
+            T cfg = Activator.CreateInstance<T>();
+            cfg.AppCfg = this;
+
             Configs.Add(typeof(T).Name, cfg);
         }
 
@@ -51,7 +52,7 @@ namespace GH.Cfg
                 return (T)config;
             }
         }
-        
+
         internal void Save()
         {
             Save(this);

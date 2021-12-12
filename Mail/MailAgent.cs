@@ -32,7 +32,7 @@ namespace PostAgent.mail
             }
             Inform(InfoType.Info, $"{letters.TotalCount} писем...");
 
-            CfgPost cfgPost = RunContext.GetCfgApp().Get<CfgPost>();
+            CfgPost cfgPost = RunContext.AppCfg().Get<CfgPost>();
 
             using (SmtpClient smtp = new SmtpClient(cfgPost.Host, cfgPost.Port))
             {
@@ -62,7 +62,7 @@ namespace PostAgent.mail
         {
             return Task.Run(() =>
             {
-                int errCount = 0; 
+                int errCount = 0;
                 try
                 {
                     foreach (var letter in letters)
@@ -112,11 +112,11 @@ namespace PostAgent.mail
                                 catch (Exception e)
                                 {
                                     errCount++;
-                                    if (errCount > 5)                                    
+                                    if (errCount > 5)
                                         Application.Exit();
-                                    
-                                   Log.Error(e, "Error");                                
-                                   Inform(InfoType.Error, e);
+
+                                    Log.Error(e, "Error");
+                                    Inform(InfoType.Error, e);
                                 }
 
                             }

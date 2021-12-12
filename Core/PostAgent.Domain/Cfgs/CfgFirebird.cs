@@ -10,9 +10,6 @@ namespace PostAgent.Domain.Cfgs
 {
     public class CfgFirebird : SectionCfg
     {
-        public CfgFirebird(AppCfg app) : base(app)
-        {
-        }
 
         [Display(Name = "Server", Description = "Сервер для подключения (http://web.firebirdsql.org).\r\nЕсли подключение к серверу на другом компьютере то Remote [V]", GroupName = "Server")]
         [EdiltorClass]

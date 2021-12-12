@@ -1,5 +1,4 @@
 ﻿using GH.Context;
-using GH.Cfg;
 using PostAgent.Domain;
 using PostAgent.Domain.App;
 using PostAgent.Domain.Cfgs;
@@ -25,7 +24,7 @@ namespace PostAgent.databases
 
         protected virtual CfgFirebird GetCfg()
         {
-            CfgFirebird cfg = RunContext.GetCfgApp().Get<CfgFirebird>();
+            CfgFirebird cfg = RunContext.AppCfg().Get<CfgFirebird>();
             cfg.Selected = EnumBaseId.ShopId;
             return cfg;
         }

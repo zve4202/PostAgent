@@ -1,16 +1,14 @@
 ﻿using GH.Cfg;
 using GH.Context;
-using GH.Forms;
 using GH.Entity;
-using PostAgent.Domain;
-using PostAgent.Domain.App;
+using GH.Forms;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PostAgent.frames
 {
     public class BaseControl<T> : AbstrctControl
-        where T : AbstractEntity
+        where T : SectionCfg
     {
 
         public BaseControl()
@@ -27,10 +25,10 @@ namespace PostAgent.frames
 
         public List<T> GetBindingList()
         {
-            AppCfg app = RunContext.GetCfgApp();
-            T cfg = app.Get<T>();
-            var list = new List<T>();
-            list.Add(cfg);
+            var list = new List<T>() 
+            {
+                RunContext.AppCfg().Get<T>()
+            };
             return list;
         }
     }

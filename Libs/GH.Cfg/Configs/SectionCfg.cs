@@ -4,17 +4,14 @@ namespace GH.Cfg
 {
     public class SectionCfg : AbstractEntity
     {
-        private AppCfg _app = null;
 
-        public SectionCfg(AppCfg app)
-        {
-            _app = app;
-        }
+        public AppCfg AppCfg { get => _app; set => _app = value; }
+        private AppCfg _app = null;
 
         public override void EndEdit()
         {
             base.EndEdit();
-            _app?.Save();
+            AppCfg?.Save();
         }
 
     }

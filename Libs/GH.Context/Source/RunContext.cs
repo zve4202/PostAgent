@@ -1,33 +1,32 @@
 ﻿using GH.Cfg;
 using Serilog;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GH.Context
 {
-    public class RunContext: ApplicationContext        
+    public class RunContext : ApplicationContext
     {
         #region static
         private static Mutex _mutex;
         private static NamedPipeManager namedPipe;
         protected static RunContext Instance;
-        private static AppCfg cfgApp = null;
+        private static AppCfg appCfg = null;
 
-        public static AppCfg GetCfgApp()
+        public static AppCfg AppCfg()
         {
-            return cfgApp;
+            if (appCfg == null)
+            {
+                appCfg = Cfg.AppCfg.Load();
+            }
+            return appCfg;
         }
 
         public static void SaveCfgApp()
         {
-            AppCfg.Save(cfgApp);
+            Cfg.AppCfg.Save(appCfg);
         }
 
         private static void Activate()
@@ -87,7 +86,7 @@ namespace GH.Context
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                if (CreateAppContext<RunContext,T>())
+                if (CreateAppContext<RunContext, T>())
                 {
                     AppDomain.CurrentDomain.UnhandledException += delegate (object sender, UnhandledExceptionEventArgs e)
                     {
@@ -114,12 +113,12 @@ namespace GH.Context
             Application.Run(Instance);
         }
 
-        private static bool CreateAppContext<C,T>() where C: RunContext where T : Form
+        private static bool CreateAppContext<C, T>() where C : RunContext where T : Form
         {
             try
             {
                 Instance = Activator.CreateInstance<C>();
-                Instance.MainForm = Activator.CreateInstance<T>(); ;                
+                Instance.MainForm = Activator.CreateInstance<T>(); ;
             }
             catch (Exception ex)
             {
@@ -130,15 +129,20 @@ namespace GH.Context
             return Instance != null;
         }
         #endregion
-        
+
         #region property & fields
-        public new Form MainForm { 
+        public new Form MainForm
+        {
             get => base.MainForm;
-            set 
+            set
             {
                 base.MainForm = value;
-                cfgApp = AppCfg.Load();
-            } 
+                if (appCfg == null)
+                {
+                    appCfg = Cfg.AppCfg.Load();
+                }
+                
+            }
         }
         #endregion
 

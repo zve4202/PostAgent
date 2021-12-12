@@ -2,9 +2,6 @@
 {
     public class FormCfg : SectionCfg
     {
-        public FormCfg(AppCfg app) : base(app)
-        {
 
-        }
     }
 }

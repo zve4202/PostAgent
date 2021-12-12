@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Drawing;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using System.ComponentModel;
 
 namespace GH.Forms
 {
@@ -15,7 +14,7 @@ namespace GH.Forms
 
 
         }
-        
+
         private int GetTop()
         {
             var label = Controls.OfType<Label>().LastOrDefault();
@@ -25,7 +24,7 @@ namespace GH.Forms
             return Padding.Top;
         }
 
-        
+
         public void AddField(Field field)
         {
             LabelWidth = Math.Max(LabelWidth, LayoutHelper.TextWidth(field.Caption, Font));

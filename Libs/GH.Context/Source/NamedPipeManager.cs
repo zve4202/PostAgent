@@ -18,12 +18,12 @@ namespace GH.Context
 
         public void Start()
         {
-            worker = new BackgroundWorker(); 
+            worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
             worker.DoWork += BackgroundWorker_DoWork;
             worker.ProgressChanged += BackgroundWorker_ProgressChanged;
             worker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
-            worker.RunWorkerAsync(); 
+            worker.RunWorkerAsync();
         }
 
         public void Stop()

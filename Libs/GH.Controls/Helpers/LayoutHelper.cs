@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
+﻿using GH.Entity;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using System.ComponentModel;
-using GH.Entity;
 
 namespace GH.Forms
 {
