@@ -4,22 +4,22 @@ namespace PostAgent.Domain.App
 {
     public static class AppStorage
     {
-        public static CfgApp GetCfgApp()
+        public static AppCfg GetCfgApp()
         {
             if (cfgApp == null)
             {
-                cfgApp = CfgApp.Load();
+                cfgApp = AppCfg.Load();
             }
 
             return cfgApp;
         }
-        private static CfgApp cfgApp = null;
+        private static AppCfg cfgApp = null;
 
         public static void SaveCfgApp()
         {
             if (cfgApp != null)
             {
-                CfgApp.Save(cfgApp);
+                AppCfg.Save(cfgApp);
             }
         }
     }

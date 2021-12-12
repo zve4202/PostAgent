@@ -1,23 +1,19 @@
 ﻿using FirebirdSql.Data.FirebirdClient;
-using GH.Entity;
+using GH.Cfg;
 using GH.Controls.Annotations;
 using Newtonsoft.Json;
 using PostAgent.Domain.App;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
 
 namespace PostAgent.Domain.Cfgs
 {
-    public class CfgFirebird : AbstractEntity
+    public class CfgFirebird : SectionCfg
     {
-
-        public CfgFirebird()
+        public CfgFirebird(AppCfg app) : base(app)
         {
-
         }
 
-        
         [Display(Name = "Server", Description = "Сервер для подключения (http://web.firebirdsql.org).\r\nЕсли подключение к серверу на другом компьютере то Remote [V]", GroupName = "Server")]
         [EdiltorClass]
         public string DataSource { get; set; } = "localhost";
@@ -28,11 +24,13 @@ namespace PostAgent.Domain.Cfgs
 
         [Display(Name = "Port", Description = "Порт для подключения. Обычно 3050", GroupName = "Server")]
         [EdiltorClass(Default = 3050)]
-        public int Port { 
-            get => port; 
-            set => port = value; 
+        public int Port
+        {
+            get => port;
+            set => port = value;
         }
         private int port = 3050;
+
         [EdiltorClass]
         [Display(Name = "Charset", Description = "Язык для подключения. Обычно WIN1251", GroupName = "Server")]
         public string Charset { get; set; } = "WIN1251";

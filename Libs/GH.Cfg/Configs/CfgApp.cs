@@ -1,25 +1,21 @@
 ﻿using GH.Entity;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Text;
 
 namespace GH.Cfg
 {
-    public class CfgApp
+    public class AppCfg
     {
-        public readonly Dictionary<string, AbstractEntity> Configs;
-        public static EventHandler OnCreate = null;
-        public CfgApp()
+        public readonly Dictionary<string, SectionCfg> Configs;
+        public AppCfg()
         {
-            Configs = new Dictionary<string, AbstractEntity>();
-            OnCreate?.Invoke(this, EventArgs.Empty);
+            Configs = new Dictionary<string, SectionCfg>();
+            AddConfig<FormCfg>();
         }
         private static string FileName
         {
@@ -29,16 +25,16 @@ namespace GH.Cfg
                 return $"{name}.ini";
             }
         }
-        public void AddConfig<T>() where T: AbstractEntity
+        public void AddConfig<T>() where T : SectionCfg
         {
             var cfg = Activator.CreateInstance<T>();
             Configs.Add(typeof(T).Name, cfg);
         }
 
 
-        public T Get<T>() where T: AbstractEntity
-        {            
-            Configs.TryGetValue(typeof(T).Name, out AbstractEntity config);
+        public T Get<T>() where T : SectionCfg
+        {
+            Configs.TryGetValue(typeof(T).Name, out SectionCfg config);
             try
             {
                 if (config == null)
@@ -48,15 +44,20 @@ namespace GH.Cfg
                 }
                 return (T)config;
             }
-            catch 
+            catch
             {
                 AddConfig<T>();
                 config = Configs[typeof(T).Name];
                 return (T)config;
             }
         }
+        
+        internal void Save()
+        {
+            Save(this);
+        }
 
-        public static void Save(CfgApp cfg)
+        public static void Save(AppCfg cfg)
         {
             FileInfo _fileInfo = new FileInfo(FileName);
 
@@ -78,20 +79,20 @@ namespace GH.Cfg
             catch (Exception err)
             {
                 Log.Error(err, "Error");
-            }            
+            }
         }
-        public static CfgApp Load()
+        public static AppCfg Load()
         {
             FileInfo _fileInfo = new FileInfo(FileName);
             if (!_fileInfo.Exists)
             {
-                return new CfgApp();
+                return new AppCfg();
             }
 
             string json = File.ReadAllText(_fileInfo.FullName, Encoding.UTF8);
             if (string.IsNullOrEmpty(json))
             {
-                return new CfgApp();
+                return new AppCfg();
             }
 
             try
@@ -101,12 +102,12 @@ namespace GH.Cfg
                     Formatting = Formatting.Indented,
                     TypeNameHandling = TypeNameHandling.All,
                 };
-                return JsonConvert.DeserializeObject<CfgApp>(json);
+                return JsonConvert.DeserializeObject<AppCfg>(json);
             }
             catch (Exception err)
             {
                 Log.Error(err, "Error");
-                return new CfgApp();
+                return new AppCfg();
             }
         }
 

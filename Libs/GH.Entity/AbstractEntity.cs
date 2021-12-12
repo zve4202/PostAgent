@@ -16,26 +16,33 @@ namespace GH.Entity
             _savedCopy = this.MemberwiseClone();
         }
 
-        public void CancelEdit()
+        public virtual void CancelEdit()
         {
             if (_savedCopy == null)
                 return;
 
-            var copyProps = GetWritePropertys(_savedCopy as IEditableObject);
-            foreach (var prop in GetWritePropertys(this))
+            var copyProps = GetPropertys(_savedCopy as IEditableObject);
+            foreach (var prop in GetPropertys(this))
             {
                 var copyProp = copyProps.First(x => x.Name == prop.Name);
                 prop.SetValue(this, copyProp.GetValue(_savedCopy));
             }
-            EndEdit();
+            _savedCopy = null;
+
         }
 
-        public void EndEdit()
+        public virtual void EndEdit()
         {
             _savedCopy = null;
         }
 
-        public static IEnumerable<PropertyInfo> GetWritePropertys(IEditableObject model)
+        public bool IsEdit()
+        {
+            return _savedCopy != null;
+        }
+
+
+        public static IEnumerable<PropertyInfo> GetPropertys(IEditableObject model)
         {
             return from p in model.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty | BindingFlags.FlattenHierarchy)
                    where p.SetMethod != null

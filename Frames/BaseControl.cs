@@ -27,7 +27,7 @@ namespace PostAgent.frames
 
         public List<T> GetBindingList()
         {
-            CfgApp app = RunContext.GetCfgApp();
+            AppCfg app = RunContext.GetCfgApp();
             T cfg = app.Get<T>();
             var list = new List<T>();
             list.Add(cfg);

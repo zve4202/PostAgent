@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CfgApp.cs" />
+    <Compile Include="Configs\CfgApp.cs" />
+    <Compile Include="Configs\FormCfg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configs\SectionCfg.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

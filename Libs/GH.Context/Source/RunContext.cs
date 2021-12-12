@@ -14,26 +14,20 @@ namespace GH.Context
 {
     public class RunContext: ApplicationContext        
     {
+        #region static
         private static Mutex _mutex;
         private static NamedPipeManager namedPipe;
         protected static RunContext Instance;
-        private static CfgApp cfgApp = null;
-        public static CfgApp GetCfgApp()
-        {
-            if (cfgApp == null)
-            {
-                cfgApp = CfgApp.Load();
-            }
+        private static AppCfg cfgApp = null;
 
+        public static AppCfg GetCfgApp()
+        {
             return cfgApp;
         }
 
         public static void SaveCfgApp()
         {
-            if (cfgApp != null)
-            {
-                CfgApp.Save(cfgApp);
-            }
+            AppCfg.Save(cfgApp);
         }
 
         private static void Activate()
@@ -77,6 +71,7 @@ namespace GH.Context
                     break;
             }
         }
+
         public static void Run<T>() where T : Form
         {
 
@@ -119,7 +114,6 @@ namespace GH.Context
             Application.Run(Instance);
         }
 
-
         private static bool CreateAppContext<C,T>() where C: RunContext where T : Form
         {
             try
@@ -135,17 +129,22 @@ namespace GH.Context
 
             return Instance != null;
         }
-
-        public EventHandler CfgAppCreate;
+        #endregion
+        
+        #region property & fields
+        public new Form MainForm { 
+            get => base.MainForm;
+            set 
+            {
+                base.MainForm = value;
+                cfgApp = AppCfg.Load();
+            } 
+        }
+        #endregion
 
         public RunContext()
         {
-            OnCreate();
         }
 
-        public virtual void OnCreate()
-        {
-            CfgApp.OnCreate += CfgAppCreate;
-        }
     }
 }

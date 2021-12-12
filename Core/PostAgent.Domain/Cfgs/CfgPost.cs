@@ -1,19 +1,18 @@
-﻿using GH.Controls.Annotations;
-using GH.Entity;
+﻿using GH.Cfg;
+using GH.Controls.Annotations;
 using Newtonsoft.Json;
 using PostAgent.Domain.App;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
 
 namespace PostAgent.Domain.Cfgs
 {
-    public class CfgPost : AbstractEntity    
+    public class CfgPost : SectionCfg
     {
-        public CfgPost()
+        public CfgPost(AppCfg app) : base(app)
         {
-
         }
+
         [Display(Name = "Host", Description = "SMTP сервер. Обычно smtp.site.ru (.com) ", GroupName = "Server"), Required(ErrorMessage = "Поле не должно быть пустым")]
         [EdiltorClass(ControlType = EditorType.WebAddress)]
         public string Host { get; set; } = "smtp.yandex.ru";
