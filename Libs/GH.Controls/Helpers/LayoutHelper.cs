@@ -10,7 +10,7 @@ namespace GH.Forms
     public static class LayoutHelper
     {
         public static IContainer components;
-        public static void CreateEntityGroup<T>(AbstrctControl control)
+        public static void CreateEntityGroup<T>(AbstractControl control)
             where T : AbstractEntity
 
         {
@@ -32,7 +32,7 @@ namespace GH.Forms
             FieldsPanel.AjastLayoutWithParent(control);
         }
 
-        public static void CreateViewGroup<T>(AbstrctControl control)
+        public static void CreateViewGroup<T>(AbstractControl control)
             where T : AbstractEntity
 
         {

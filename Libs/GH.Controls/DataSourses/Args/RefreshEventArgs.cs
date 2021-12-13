@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using GH.Forms.ComponentModel;
 
-namespace GH.Controls.DataSourses.Args
+namespace GH.DataSourses.Args
 {
     public class RefreshArgs : EventArgs
     {

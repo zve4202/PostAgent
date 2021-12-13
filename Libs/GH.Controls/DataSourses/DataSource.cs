@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GH.Controls.DataSourses.Args;
+using GH.DataSourses.Args;
 
-namespace GH.Controls.DataSourses
+namespace GH.DataSourses
 {
     [ToolboxItem(true)]
     [DefaultProperty(nameof(OnRefreshControls))]
+    [ToolboxItemFilter("GH Controls")]
     public class DataSource : BindingSource, ISupportInitialize
     {
         internal class ControlList : List<Control>
@@ -24,9 +25,21 @@ namespace GH.Controls.DataSourses
         }
         private readonly ControlList Controls = new ControlList();
 
-        [Category(nameof(DataSource))]
-        public event EventHandler<RefreshArgs> RefreshControls;        
+        public DataSource(IContainer container) : base(container)
+        {
+        }
 
+        public DataSource()
+        {
+        }
+
+        public DataSource(object dataSource, string dataMember) : base(dataSource, dataMember)
+        {
+        }
+
+        [Category(nameof(DataSource))]
+        public event EventHandler<RefreshArgs> RefreshControls;
+        
         protected override void OnListChanged(ListChangedEventArgs e)
         {
             OnRefreshControls(e);

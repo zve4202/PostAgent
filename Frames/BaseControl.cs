@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PostAgent.frames
 {
-    public class BaseControl<T> : AbstrctControl
+    public class BaseControl<T> : AbstractControl
         where T : SectionCfg
     {
 

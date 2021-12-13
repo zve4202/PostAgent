@@ -33,8 +33,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Annotations\EdiltorClassAttribute.cs" />
@@ -76,7 +78,10 @@
     <Compile Include="Controls\TextPath\TextPath.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\UserControls\AbstrctControl.cs">
+    <Compile Include="Controls\UserControls\AbstractControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\DatasourceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\UserForms\AbstractForm.cs">
@@ -112,8 +117,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controls\UserControls\AbstrctControl.resx">
-      <DependentUpon>AbstrctControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UserControls\AbstractControl.resx">
+      <DependentUpon>AbstractControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

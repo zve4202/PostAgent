@@ -3,14 +3,12 @@ using System.Windows.Forms;
 
 namespace GH.Forms
 {
-    [ToolboxItem(true)]
-    [ToolboxItemFilter("GH Controls")]
-    public class AbstrctControl : UserControl
+    public class DatasourceControl : UserControl
     {
         public BindingSource dataSource;
         private IContainer components;
 
-        public AbstrctControl()
+        public DatasourceControl()
         {
             InitializeComponent();
         }
@@ -22,13 +20,12 @@ namespace GH.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // AbstrctControl
+            // DatasourceControl
             // 
-            this.Name = "AbstrctControl";
+            this.Name = "DatasourseControl";
             this.Size = new System.Drawing.Size(554, 309);
             ((System.ComponentModel.ISupportInitialize)(this.dataSource)).EndInit();
             this.ResumeLayout(false);
-
         }
     }
 }
