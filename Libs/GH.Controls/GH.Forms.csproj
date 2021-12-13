@@ -79,6 +79,14 @@
     <Compile Include="Controls\UserControls\AbstrctControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\UserForms\AbstractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSourses\Args\RefreshEventArgs.cs" />
+    <Compile Include="DataSourses\DataSource.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\ComponentExtension.cs" />
     <Compile Include="Helpers\ControlsHelper.cs" />
     <Compile Include="Helpers\Field.cs" />
     <Compile Include="Helpers\GroupType.cs" />

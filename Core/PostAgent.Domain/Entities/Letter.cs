@@ -1,4 +1,5 @@
 ﻿//#define TEST
+using GH.Entity;
 using GH.Forms.Annotations;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace PostAgent.Domain
 {
     [Table("V_LETTERS_LIST")]
-    public class Letter
+    public class Letter: AbstractEntity
     {
         [Key]
         [Column("PR_ID")]

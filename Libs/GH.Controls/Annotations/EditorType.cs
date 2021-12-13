@@ -11,5 +11,7 @@
         Combo,
         Check,
         Button,
+        ButtonStart,
+        ButtonStop,
     }
 }

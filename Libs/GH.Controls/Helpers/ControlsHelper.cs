@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace GH.Forms
 {
-
     public static class ControlsHelper
     {
         public static Field[] GetFields<T>(string[] except = null, bool withKey = false)

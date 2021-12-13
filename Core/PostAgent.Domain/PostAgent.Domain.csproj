@@ -53,6 +53,7 @@
     <Compile Include="Cfgs\CfgFirebird.cs" />
     <Compile Include="Cfgs\CfgPost.cs" />
     <Compile Include="Entities\Letter.cs" />
+    <Compile Include="Entities\SendContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
