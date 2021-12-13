@@ -7,23 +7,12 @@ namespace GH.Forms
     [ToolboxItemFilter("GH Controls")]
     public class AbstractControl : UserControl
     {
-        private IContainer components;
 
         public AbstractControl()
         {
-            InitializeComponent();
+            Padding = new Padding(10);
+            this.Size = new System.Drawing.Size(434, 334);
         }
 
-        private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            this.SuspendLayout();
-            // 
-            // AbstrctControl
-            // 
-            this.Name = "AbstrctControl";
-            this.Size = new System.Drawing.Size(554, 309);
-            this.ResumeLayout(false);
-        }
     }
 }

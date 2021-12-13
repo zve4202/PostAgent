@@ -1,7 +1,6 @@
 ﻿using GH.Entity;
 using GH.Forms.Annotations;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PostAgent.Domain
 {
@@ -10,11 +9,11 @@ namespace PostAgent.Domain
 
         [Display(Name = "Отправить", Description = "Отправить почту", GroupName = nameof(SendContext))]
         [EdiltorClass(ControlType = EditorType.ButtonStart)]
-        public bool Begin 
-        { 
+        public bool Begin
+        {
             get => _begin;
-            set 
-            { 
+            set
+            {
                 _begin = value;
                 _stop = !_begin;
             }

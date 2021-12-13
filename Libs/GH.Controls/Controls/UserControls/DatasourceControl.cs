@@ -1,31 +1,40 @@
-﻿using System.ComponentModel;
+﻿using System.Collections;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace GH.Forms
 {
-    public class DatasourceControl : UserControl
+    [ToolboxItem(true)]
+    [ToolboxItemFilter("GH Controls")]
+    public class DatasourceControl : AbstractControl
     {
         public BindingSource dataSource;
-        private IContainer components;
+        private IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         public DatasourceControl()
         {
-            InitializeComponent();
+            components = new System.ComponentModel.Container();
+            dataSource = new System.Windows.Forms.BindingSource(components);
         }
 
-        private void InitializeComponent()
+        public void Open()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dataSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSource)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // DatasourceControl
-            // 
-            this.Name = "DatasourseControl";
-            this.Size = new System.Drawing.Size(554, 309);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSource)).EndInit();
-            this.ResumeLayout(false);
+            dataSource.DataSource = GetBindingList();
         }
+
+        public virtual IList GetBindingList()
+        {
+            return (IList)null;
+        }
+
     }
 }

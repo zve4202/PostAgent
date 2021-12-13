@@ -1,11 +1,9 @@
-﻿using System;
+﻿using GH.DataSourses.Args;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using GH.DataSourses.Args;
 
 namespace GH.DataSourses
 {
@@ -39,11 +37,11 @@ namespace GH.DataSourses
 
         [Category(nameof(DataSource))]
         public event EventHandler<RefreshArgs> RefreshControls;
-        
+
         protected override void OnListChanged(ListChangedEventArgs e)
         {
             OnRefreshControls(e);
-            base.OnListChanged(e);            
+            base.OnListChanged(e);
         }
         protected override void OnBindingComplete(BindingCompleteEventArgs e)
         {
@@ -62,8 +60,8 @@ namespace GH.DataSourses
             List<Control> controls = Controls.ToList();
 
             foreach (var control in controls)
-                RefreshControls(this, new RefreshArgs(e.ListChangedType, control, e));
-            
+                RefreshControls(this, new RefreshArgs(e.ListChangedType, control, Current));
+
         }
     }
 }
