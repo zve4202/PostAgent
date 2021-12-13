@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace PostAgent.frames
 {
-    public class BaseControl<T> : DatasourceControl
+    public class BaseControl<T> : DataSourceControl
         where T : SectionCfg
     {
         public BaseControl()

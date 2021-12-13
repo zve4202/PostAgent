@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GH.DataSourses;
+using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -6,9 +7,9 @@ namespace GH.Forms
 {
     [ToolboxItem(true)]
     [ToolboxItemFilter("GH Controls")]
-    public class DatasourceControl : AbstractControl
+    public class DataSourceControl : AbstractControl
     {
-        public BindingSource dataSource;
+        public DataSource dataSource;
         private IContainer components = null;
 
         protected override void Dispose(bool disposing)
@@ -20,10 +21,10 @@ namespace GH.Forms
             base.Dispose(disposing);
         }
 
-        public DatasourceControl()
+        public DataSourceControl()
         {
             components = new System.ComponentModel.Container();
-            dataSource = new System.Windows.Forms.BindingSource(components);
+            dataSource = new DataSource(components);
         }
 
         public void Open()

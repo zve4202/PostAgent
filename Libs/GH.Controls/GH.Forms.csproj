@@ -41,13 +41,7 @@
   <ItemGroup>
     <Compile Include="Annotations\EdiltorClassAttribute.cs" />
     <Compile Include="Annotations\EditorType.cs" />
-    <Compile Include="Controls\Buttons\BaseButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Buttons\ButtonCancel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Buttons\ButtonOK.cs">
+    <Compile Include="Controls\Buttons\DialogButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Panels\BasePanel.cs">
@@ -81,7 +75,7 @@
     <Compile Include="Controls\UserControls\AbstractControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\UserControls\DatasourceControl.cs">
+    <Compile Include="Controls\UserControls\DataSourceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\UserForms\AbstractForm.cs">
@@ -98,6 +92,52 @@
     <Compile Include="Helpers\LayoutHelper.cs" />
     <Compile Include="Helpers\ObjectHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\BaseOptions.cs" />
+    <Compile Include="Utils\Controls\BaseControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\Controls\Providers\BaseControlBoundsProvider.cs" />
+    <Compile Include="Utils\Controls\Enums\BorderStyles.cs" />
+    <Compile Include="Utils\Controls\Enums\ComponentActions.cs" />
+    <Compile Include="Utils\Controls\Utils\ControlActions.cs" />
+    <Compile Include="Utils\Controls\Providers\ControlBoundsProvider.cs" />
+    <Compile Include="Utils\Controls\Utils\ControlFilter.cs" />
+    <Compile Include="Utils\Controls\Attributrs\GHLocalizedDescriptionAttribute.cs" />
+    <Compile Include="Utils\Controls\Attributrs\GHToolboxItemAttribute.cs" />
+    <Compile Include="Utils\Controls\Enums\GHToolboxItemKind.cs" />
+    <Compile Include="Utils\Controls\Interfases\IGHFocusController.cs" />
+    <Compile Include="Utils\Controls\Interfases\IGHResizableControl.cs" />
+    <Compile Include="Utils\Controls\Interfases\ISmartTagClientBoundsProvider.cs" />
+    <Compile Include="Utils\Controls\Interfases\ISmartTagFilter.cs" />
+    <Compile Include="Utils\Controls\Interfases\IStyleController.cs" />
+    <Compile Include="Utils\Controls\Interfases\ISupportStyleController.cs" />
+    <Compile Include="Utils\Controls\Interfases\ISupportToolTipsForm.cs" />
+    <Compile Include="Utils\Controls\Interfases\IToolTipControlClient.cs" />
+    <Compile Include="Utils\Controls\Enums\PopupBorderStyles.cs" />
+    <Compile Include="Utils\Controls\Enums\ProductKind.cs" />
+    <Compile Include="Utils\Controls\Attributrs\SmartTagActionAttribute.cs" />
+    <Compile Include="Utils\Controls\Enums\SmartTagActionType.cs" />
+    <Compile Include="Utils\Controls\Attributrs\SmartTagFilterAttribute.cs" />
+    <Compile Include="Utils\Controls\Attributrs\SmartTagSupportAttribute.cs" />
+    <Compile Include="Utils\Controls\Utils\ToolboxIconsRootNS.cs" />
+    <Compile Include="Utils\Controls\Attributrs\ToolboxTabNameAttribute.cs" />
+    <Compile Include="Utils\Controls\ToolTipControlInfo.cs" />
+    <Compile Include="Utils\Controls\Enums\ToolTipIconType.cs" />
+    <Compile Include="Utils\Controls\Enums\ToolTipLocation.cs" />
+    <Compile Include="Utils\Controls\Enums\ToolTipType.cs" />
+    <Compile Include="Utils\Controls\Utility.cs" />
+    <Compile Include="Utils\ready\IViewBagOwner.cs" />
+    <Compile Include="Utils\Controls\ControlBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\Design\AppearanceObjectUITypeEditor.cs" />
+    <Compile Include="Utils\ready\FontBehaviorHelper.cs" />
+    <Compile Include="Utils\InplaceEditorUpdateMode.cs" />
+    <Compile Include="Utils\ready\ISerializableLayoutEx.cs" />
+    <Compile Include="Utils\OptionsLayoutBase.cs" />
+    <Compile Include="Utils\ready\ViewStatePersisterCore.cs" />
+    <Compile Include="Utils\ready\WindowsFormsFontBehavior.cs" />
+    <Compile Include="Utils\WindowsFormsSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\TextPassword\toolbox.bmp" />
@@ -120,6 +160,9 @@
     <EmbeddedResource Include="Controls\UserControls\AbstractControl.resx">
       <DependentUpon>AbstractControl.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\Controls\ready\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
